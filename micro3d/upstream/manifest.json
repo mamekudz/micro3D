@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "product": {"id": "micro3D", "displayName": "µ3D", "license": "GPL-3.0-or-later"},
+  "upstream": {"url": "https://projects.blender.org/blender/blender.git", "ref": "refs/heads/blender-v5.3-release", "channel": "5.3-beta"},
+  "targets": ["windows-x64", "linux-x64", "macos-arm64"],
+  "patchSeries": "patches/series.json",
+  "automaticUpdates": false
+}

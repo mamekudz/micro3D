@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "file": "product.svg",
+      "sha256": "1132e10c93b5206375462b9045e7126ae4f23bfa8fd9ca11e80e90d1c0c0582c",
+      "origin": "Original geometric placeholder drawn in this project, 2026-10-11; no external reference asset",
+      "license": "GPL-3.0-or-later",
+      "status": "placeholder, not trademark-cleared"
+    },
+    {
+      "file": "objects.svg",
+      "sha256": "29d194b47e57cbd1fc2752bce42ab75eac3f8e528bbef7a4ad040e4b0ec936ab",
+      "origin": "Original geometric placeholder drawn in this project, 2026-10-11; no external reference asset",
+      "license": "GPL-3.0-or-later",
+      "status": "placeholder, not trademark-cleared"
+    },
+    {
+      "file": "attributes.svg",
+      "sha256": "d03ec949b4d89951a32f0d9aa28515c1fb8651318c0000c946c47297181a671b",
+      "origin": "Original geometric placeholder drawn in this project, 2026-10-11; no external reference asset",
+      "license": "GPL-3.0-or-later",
+      "status": "placeholder, not trademark-cleared"
+    },
+    {
+      "file": "navigation.svg",
+      "sha256": "740e7730b231972d821ce724ed41228d54754b020835e028ae9959fc525f09bb",
+      "origin": "Original geometric placeholder drawn in this project, 2026-10-11; no external reference asset",
+      "license": "GPL-3.0-or-later",
+      "status": "placeholder, not trademark-cleared"
+    },
+    {
+      "file": "dongleware-cube-reference.png",
+      "sha256": "266433ecfcb5880d0a3cd548e3fc8d4e91fd50c526844f52453e230887c0bcce",
+      "origin": "User-supplied Dongleware cube reference, 2026-10-11",
+      "license": "Not determined; not covered by the scaffold GPL declaration",
+      "status": "User-selected logo direction; raster draft, source rights not independently verified"
+    },
+    {
+      "file": "dongleware-cube-red.png",
+      "sha256": "f6a91c3782ac39f07055753d5e91071e3986fef021e34eb5ceda4a46877055bb",
+      "origin": "Red recoloring of user-supplied Dongleware cube using built-in Imagegen, 2026-10-11",
+      "license": "Not determined; not covered by the scaffold GPL declaration",
+      "status": "User-selected logo direction; raster draft, source rights not independently verified"
+    },
+    {
+      "file": "micro3D-logo.svg",
+      "sha256": "e5d604472de85d18a3ae97088b9f7d5e44d9cdf89e35b785e4a33b0ab8d1bbed",
+      "origin": "User-requested manual vector reconstruction of supplied Dongleware cube; flat red polygons",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "active vector master"
+    },
+    {
+      "file": "micro3D-app.svg",
+      "sha256": "2964364e403368990c1314c31e5715756bef482283961dc11ba1c85a22e68bd5",
+      "origin": "User-requested manual vector reconstruction of supplied Dongleware cube; flat red polygons",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "active vector master"
+    },
+    {
+      "file": "generated/micro3D-1024.png",
+      "sha256": "b85a8c7737f18d788106cc40d411a8cc7d58204ee8a5b1d248da796092e5e228",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D-128.png",
+      "sha256": "aa038f2dc78ac5e4f38b66fc10a862e6a4967eb6df567ecbc53dccbf61d36685",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D-16.png",
+      "sha256": "9357399e3b7d0c837c0944093857d6f7756c8ab3a053af1181fb4c8278bf2a83",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D-24.png",
+      "sha256": "b88b534af3fb02620b5192db5b3a8c281ed5c8d14a73d30ff476663cc8dd92cd",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D-256.png",
+      "sha256": "cf31f1082562c31b5e0743f84bead3364848c785361614a23e3de2a807b1dac1",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D-32.png",
+      "sha256": "be9cef98b52126a3099b521d9b48cb690ebd28052a2c611c52c8a1f536a46378",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D-48.png",
+      "sha256": "cc7324b6c2957b564f9d416d83fa707a3ba08fea0c261f846b37a2b6f9260f80",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D-512.png",
+      "sha256": "65d3943f39f885eeb3d0b1c074f38bfe8a26521169692de74497dadc1e8ed9ac",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D-64.png",
+      "sha256": "6dde6e44d58e55583a0e1782278687e3214eb0a6d62c3a4f8d063e5ecfc7e9ad",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D.icns",
+      "sha256": "fd36fcf5550408be83958e8ebdbfcf4993900146cebc44fdaf2cee7cbef5628b",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "generated/micro3D.ico",
+      "sha256": "0069682a97ac7a6a6b6b5b740ba3841d9e7b9476aa49929255323911cdaa45e3",
+      "origin": "Deterministic render from micro3D-app.svg via locked sharp version",
+      "license": "Same rights as user-supplied logo source; no GPL grant asserted",
+      "status": "app icon asset"
+    },
+    {
+      "file": "microgulp-ready.png",
+      "sha256": "e646b2b57fd10a869bcdafdd63f2f0409221ffd4821a8c3334fdb311390804b7",
+      "origin": "Unmodified official microGulp Ready badge from microGulp/dev/media/final",
+      "license": "Badge usage rules: https://microgulp.dev/en/ready/ ; not GPL",
+      "status": "development task integration badge"
+    }
+  ],
+  "productLogo": "micro3D-logo.svg",
+  "appIconSource": "micro3D-app.svg"
+}

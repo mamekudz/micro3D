@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "target": "windows-x64",
+  "channel": "5.3-beta",
+  "source": {
+    "url": "https://projects.blender.org/blender/blender.git",
+    "ref": "refs/heads/blender-v5.3-release",
+    "commit": "a6f145b151fa8562a478ed2c381ab945e7bcac72",
+    "note": "Detached snapshot of blender-v5.3-release, not a final release",
+    "lfs": {
+      "fileCount": 6930,
+      "manifestSha256": "81b71514a93d727bbaabad68a4d552d0dcc05f8fb0a4bb949a0835267eb0aff8"
+    }
+  },
+  "libraries": [
+    {
+      "path": "lib/windows_x64",
+      "url": "https://projects.blender.org/blender/lib-windows_x64.git",
+      "commit": "aa0c5db72fa9488bb685bdddbede780d19f483f5",
+      "gitmodulesBranch": "blender-v5.3-release",
+      "checkout": "gitlink of the pinned Blender commit; the branch tip is not used",
+      "lfs": {
+        "fileCount": 1260,
+        "manifestSha256": "66a1013cd01a53186f84eb62d975d27f1aae4513cc871229e9ec7050d57a9116"
+      }
+    }
+  ],
+  "replay": {
+    "command": "python tools/platform_lock.py replay",
+    "refuses": "make update, branch checkout, and any source commit other than the pin"
+  },
+  "toolchain": {
+    "os": "windows-x64",
+    "visualStudio": {
+      "product": "Microsoft.VisualStudio.Product.BuildTools",
+      "version": "17.14.37710.0",
+      "year": 2022
+    },
+    "msvcToolsets": [
+      "14.44.35207"
+    ],
+    "windowsSdk": [
+      "10.0.22621.0",
+      "10.0.26100.0"
+    ],
+    "cmake": "cmake version 3.31.6-msvc6",
+    "generator": "Visual Studio 17 2022",
+    "architecture": "x64",
+    "python": "3.12.10",
+    "git": "git version 2.51.0.windows.1",
+    "sourceDateEpoch": "1791671774",
+    "parallelCompileJobs": 1,
+    "gpuKernelSdks": "not enabled"
+  },
+  "build": {
+    "name": "windows-ui-reconstructed",
+    "configuration": "Release",
+    "cmakeInitialCache": "vendor/blender/build_files/cmake/config/blender_full.cmake",
+    "buildDir": "build/windows-reconstructed",
+    "installPrefix": "dist/windows-ui-reconstructed",
+    "makeBat": [
+      "2022b",
+      "full",
+      "nobuild",
+      "builddir",
+      "build/windows-reconstructed"
+    ],
+    "gpuOptions": [
+      "-DWITH_CYCLES_DEVICE_CUDA=OFF",
+      "-DWITH_CYCLES_DEVICE_OPTIX=OFF",
+      "-DWITH_CYCLES_CUDA_BINARIES=OFF",
+      "-DWITH_CYCLES_DEVICE_HIP=OFF",
+      "-DWITH_CYCLES_DEVICE_HIPRT=OFF",
+      "-DWITH_CYCLES_HIP_BINARIES=OFF",
+      "-DWITH_CYCLES_DEVICE_ONEAPI=OFF",
+      "-DWITH_CYCLES_ONEAPI_BINARIES=OFF"
+    ],
+    "compile": [
+      "msbuild",
+      "Blender.sln",
+      "/target:build",
+      "/property:Configuration=Release",
+      "/maxcpucount:1",
+      "/p:platform=x64",
+      "/verbosity:minimal"
+    ],
+    "compilerExtra": [],
+    "install": [
+      "msbuild",
+      "INSTALL.vcxproj",
+      "/property:Configuration=Release",
+      "/p:platform=x64",
+      "/verbosity:minimal"
+    ],
+    "portable": true
+  }
+}

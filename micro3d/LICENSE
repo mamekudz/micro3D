@@ -1,0 +1,20 @@
+micro3D original project files
+SPDX-License-Identifier: GPL-3.0-or-later
+
+The original files in this scaffold are licensed under the GNU General Public
+License as published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+Full license text: LICENSES/GPL-3.0-or-later.txt.
+Third-party files retain their original notices and licenses. This project does
+not grant any rights to third-party trademarks. See docs/LEGAL.md.
+
+Exception: branding/dongleware-cube-reference.png and branding/dongleware-cube-red.png are user-supplied reference material and its edited derivative, respectively. No GPL license grant for these two files is asserted; see branding/LOGO.md.
+
+The same user-supplied-logo exception also applies to branding/micro3D-logo.svg, branding/micro3D-app.svg and branding/generated/* derived from these masters.
+
+branding/microgulp-ready.png is the unmodified official badge, used under https://microgulp.dev/en/ready/ . It is not covered by the project GPL grant.

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "patches": [
+    {
+      "id": "product-identity",
+      "file": "patches/0001-product-identity.patch",
+      "purpose": "Name the Windows executable micro3D, show µ3D in the window title and About dialog, and use the project icon while keeping Blender version and API identifiers.",
+      "category": "branding",
+      "tests": "windows-launch,version-string,icon-resource",
+      "upstreamStrategy": "local-only"
+    },
+    {
+      "id": "config-isolation",
+      "file": "patches/0002-config-isolation.patch",
+      "purpose": "Store configuration and cache data in micro3D directories on Windows, Linux and macOS so an existing Blender profile is left untouched.",
+      "category": "packaging",
+      "tests": "windows-profile-isolation,parallel-launch",
+      "upstreamStrategy": "local-only"
+    },
+    {
+      "id": "ui-bootstrap",
+      "file": "patches/0003-ui-layout.patch",
+      "purpose": "Enable the viewport, object manager, attributes and timeline, with labeled tools and a switchable navigation preset.",
+      "category": "ui",
+      "tests": "layout-areas,keymap-preset,addon-register",
+      "upstreamStrategy": "local-only"
+    },
+    {
+      "id": "usd-pch-option",
+      "file": "patches/0004-usd-pch.patch",
+      "purpose": "Provide a default-off build option so the USD importer can compile on Windows hosts that cannot create its precompiled header.",
+      "category": "build",
+      "tests": "windows-ui-reconstruct",
+      "upstreamStrategy": "local-only"
+    }
+  ]
+}

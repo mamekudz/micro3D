@@ -1,0 +1,16 @@
+diff --git a/source/blender/io/usd/CMakeLists.txt b/source/blender/io/usd/CMakeLists.txt
+index e916c4b7538..983d883733b 100644
+--- a/source/blender/io/usd/CMakeLists.txt
++++ b/source/blender/io/usd/CMakeLists.txt
+@@ -229,7 +229,10 @@ blender_add_lib(bf_io_usd "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+ # RNA_prototypes.hh
+ add_dependencies(bf_io_usd bf_rna)
+ 
+-if(COMMAND target_precompile_headers)
++# µ3D: some Windows hosts fail to compile this precompiled header (C3859 / C1076,
++# paging file error 1455). The default keeps upstream behavior.
++option(MICRO3D_DISABLE_USD_PCH "Build the USD importer without a precompiled header" OFF)
++if(COMMAND target_precompile_headers AND NOT MICRO3D_DISABLE_USD_PCH)
+   target_precompile_headers(bf_io_usd PRIVATE intern/usd_precomp.hh)
+ endif()
+ 

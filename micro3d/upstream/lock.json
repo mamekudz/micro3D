@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "status": "bootstrap",
+  "resolvedAt": "2026-10-11",
+  "source": {
+    "url": "https://projects.blender.org/blender/blender.git",
+    "ref": "refs/heads/blender-v5.3-release",
+    "commit": "a6f145b151fa8562a478ed2c381ab945e7bcac72",
+    "verification": "git ls-remote of official repository; branch snapshot, not final release"
+  },
+  "patches": [
+    {
+      "id": "product-identity",
+      "file": "patches/0001-product-identity.patch",
+      "sha256": "8ff0ab31f68946e1750fbb16c7b829e99bcc55a491c9b738affeb5fe7ef6c920"
+    },
+    {
+      "id": "config-isolation",
+      "file": "patches/0002-config-isolation.patch",
+      "sha256": "6e239a0e21058604fdcbaa9cc6ed63c4627b02cb2c2903b2fb1875d464d28571"
+    },
+    {
+      "id": "ui-bootstrap",
+      "file": "patches/0003-ui-layout.patch",
+      "sha256": "531635f2169be20f988504ee3faa3da7b9ed557d4dbe26b5e3ae4f06894264fd"
+    },
+    {
+      "id": "usd-pch-option",
+      "file": "patches/0004-usd-pch.patch",
+      "sha256": "b6c57becb151fc8c544d478ea0f807011ed6675bf529f735df683269ce6714c8"
+    }
+  ],
+  "platformLocks": {
+    "windows-x64": {
+      "file": "upstream/platforms/windows-x64.json",
+      "sha256": "b92060c28d560877c77c9d907c6afd481fb96ca2f6cd8b8b49fd89a0b86ca73d"
+    }
+  },
+  "unresolved": [
+    "linux-x64 and macos-arm64 platform locks",
+    "clean rebuild on a second machine",
+    "bit-identical reproduction",
+    "code signing and notarization"
+  ]
+}

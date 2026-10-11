@@ -1,0 +1,95 @@
+diff --git a/intern/ghost/intern/GHOST_SystemPathsCocoa.mm b/intern/ghost/intern/GHOST_SystemPathsCocoa.mm
+index 762e0726b79..d701561f186 100644
+--- a/intern/ghost/intern/GHOST_SystemPathsCocoa.mm
++++ b/intern/ghost/intern/GHOST_SystemPathsCocoa.mm
+@@ -30,7 +30,7 @@ static const char *GetApplicationSupportDir(const char *versionstr,
+ 
+     snprintf(tempPath,
+              len_tempPath,
+-             "%s/Blender/%s",
++             "%s/micro3D/%s",
+              [basePath cStringUsingEncoding:NSASCIIStringEncoding],
+              versionstr);
+   }
+diff --git a/intern/ghost/intern/GHOST_SystemPathsUnix.cc b/intern/ghost/intern/GHOST_SystemPathsUnix.cc
+index 6631af75141..f153d244a0b 100644
+--- a/intern/ghost/intern/GHOST_SystemPathsUnix.cc
++++ b/intern/ghost/intern/GHOST_SystemPathsUnix.cc
+@@ -43,7 +43,7 @@ const char *GHOST_SystemPathsUnix::getSystemDir(int /*version*/, const char *ver
+ {
+   /* no prefix assumes a portable build which only uses bundled scripts */
+   if (static_path) {
+-    static string system_path = string(static_path) + "/blender/" + versionstr;
++    static string system_path = string(static_path) + "/micro3d/" + versionstr;
+     return system_path.c_str();
+   }
+ 
+@@ -53,7 +53,7 @@ const char *GHOST_SystemPathsUnix::getSystemDir(int /*version*/, const char *ver
+ const char *GHOST_SystemPathsUnix::getSystemLibsDir(int /*version*/, const char *versionstr) const
+ {
+   if (static_libs_path) {
+-    static string system_libs_path = string(static_libs_path) + "/blender/" + versionstr;
++    static string system_libs_path = string(static_libs_path) + "/micro3d/" + versionstr;
+     return system_libs_path.c_str();
+   }
+ 
+@@ -102,12 +102,12 @@ const char *GHOST_SystemPathsUnix::getUserDir(int version, const char *versionst
+     last_version = version;
+ 
+     if (home) {
+-      user_path = string(home) + "/blender/" + versionstr;
++      user_path = string(home) + "/micro3d/" + versionstr;
+     }
+     else {
+       home = home_dir_get();
+       if (home) {
+-        user_path = string(home) + "/.config/blender/" + versionstr;
++        user_path = string(home) + "/.config/micro3d/" + versionstr;
+       }
+       else {
+         return nullptr;
+diff --git a/intern/ghost/intern/GHOST_SystemPathsWin32.cc b/intern/ghost/intern/GHOST_SystemPathsWin32.cc
+index 71d6d45ace5..338bd6bf0fc 100644
+--- a/intern/ghost/intern/GHOST_SystemPathsWin32.cc
++++ b/intern/ghost/intern/GHOST_SystemPathsWin32.cc
+@@ -32,7 +32,7 @@ const char *GHOST_SystemPathsWin32::getSystemDir(int, const char *versionstr) co
+ 
+   if (hResult == S_OK) {
+     conv_utf_16_to_8(knownpath_16, knownpath, MAX_PATH * 3);
+-    strcat(knownpath, "\\Blender Foundation\\Blender\\");
++    strcat(knownpath, "\\micro3D\\micro3D\\");
+     strcat(knownpath, versionstr);
+     system_dir = knownpath;
+   }
+@@ -53,7 +53,7 @@ const char *GHOST_SystemPathsWin32::getUserDir(int, const char *versionstr) cons
+ 
+   if (hResult == S_OK) {
+     conv_utf_16_to_8(knownpath_16, knownpath, MAX_PATH * 3);
+-    strcat(knownpath, "\\Blender Foundation\\Blender\\");
++    strcat(knownpath, "\\micro3D\\micro3D\\");
+     strcat(knownpath, versionstr);
+     user_dir = knownpath;
+   }
+diff --git a/source/blender/blenkernel/intern/appdir.cc b/source/blender/blenkernel/intern/appdir.cc
+index 423d58b3c37..c7aed10dd4e 100644
+--- a/source/blender/blenkernel/intern/appdir.cc
++++ b/source/blender/blenkernel/intern/appdir.cc
+@@ -220,14 +220,14 @@ void BKE_appdir_folder_caches(char *path, const size_t path_maxncpy)
+   BLI_path_join(path,
+                 path_maxncpy,
+                 caches_root_path->c_str(),
+-                "Blender Foundation",
+-                "Blender",
++                "micro3D",
++                "micro3D",
+                 "Cache",
+                 SEP_STR);
+ #elif defined(__APPLE__)
+-  BLI_path_join(path, path_maxncpy, caches_root_path->c_str(), "Blender", SEP_STR);
++  BLI_path_join(path, path_maxncpy, caches_root_path->c_str(), "micro3D", SEP_STR);
+ #else /* __linux__ */
+-  BLI_path_join(path, path_maxncpy, caches_root_path->c_str(), "blender", SEP_STR);
++  BLI_path_join(path, path_maxncpy, caches_root_path->c_str(), "micro3d", SEP_STR);
+ #endif
+ }
+ 
