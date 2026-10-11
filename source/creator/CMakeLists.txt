@@ -2206,7 +2206,9 @@ endif()
 # Setup launcher
 
 if(WIN32 AND NOT WITH_PYTHON_MODULE)
-  set(BLENDER_BIN "blender.exe")
+  set(BLENDER_BIN "micro3D.exe")
+  set_target_properties(blender PROPERTIES OUTPUT_NAME micro3D)
+  set_target_properties(blender-launcher PROPERTIES OUTPUT_NAME micro3D-launcher)
   install(
     TARGETS blender blender-launcher
     COMPONENT Blender

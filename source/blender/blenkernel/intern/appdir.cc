@@ -220,14 +220,14 @@ void BKE_appdir_folder_caches(char *path, const size_t path_maxncpy)
   BLI_path_join(path,
                 path_maxncpy,
                 caches_root_path->c_str(),
-                "Blender Foundation",
-                "Blender",
+                "micro3D",
+                "micro3D",
                 "Cache",
                 SEP_STR);
 #elif defined(__APPLE__)
-  BLI_path_join(path, path_maxncpy, caches_root_path->c_str(), "Blender", SEP_STR);
+  BLI_path_join(path, path_maxncpy, caches_root_path->c_str(), "micro3D", SEP_STR);
 #else /* __linux__ */
-  BLI_path_join(path, path_maxncpy, caches_root_path->c_str(), "blender", SEP_STR);
+  BLI_path_join(path, path_maxncpy, caches_root_path->c_str(), "micro3d", SEP_STR);
 #endif
 }
 

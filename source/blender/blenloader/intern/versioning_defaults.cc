@@ -83,7 +83,8 @@ static bool blo_is_builtin_template(const char *app_template)
                                     N_("Storyboarding"),
                                     N_("Sculpting"),
                                     N_("VFX"),
-                                    N_("Video_Editing")));
+                                    N_("Video_Editing"),
+                                    N_("micro3d")));
 }
 
 static void blo_update_defaults_screen(bScreen *screen,

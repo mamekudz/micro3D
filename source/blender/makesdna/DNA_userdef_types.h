@@ -1084,7 +1084,7 @@ struct UserDef {
   short menuthreshold1 = 5, menuthreshold2 = 2;
 
   /** Startup application template. */
-  char app_template[64] = "";
+  char app_template[64] = "micro3d";
 
   /**
    * A list of themes (#bTheme), the first is only used currently.

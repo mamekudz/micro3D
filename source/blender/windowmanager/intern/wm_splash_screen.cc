@@ -453,32 +453,38 @@ static ui::Block *wm_block_about_create(bContext *C, ARegion *region, void * /*a
                                         0,
                                         style);
 
-/* Blender logo. */
+/* Product mark from the app template. Credits and license text stay in the menu below. */
 #ifndef WITH_HEADLESS
-  constexpr bool show_color = false;
-  const float size = 0.2f * dialog_width;
-
-  ImBuf *ibuf = ui::svg_icon_bitmap(ICON_BLENDER_LOGO_LARGE, size, show_color);
-
+  ImBuf *ibuf = nullptr;
+  if (U.app_template[0] != '\0') {
+    char splash_filepath[FILE_MAX];
+    char template_directory[FILE_MAX];
+    if (BKE_appdir_app_template_id_search(
+            U.app_template, template_directory, sizeof(template_directory)))
+    {
+      BLI_path_join(splash_filepath, sizeof(splash_filepath), template_directory, "splash.png");
+      ibuf = IMB_load_image_from_filepath(splash_filepath, ImBufFlags::ByteData);
+    }
+  }
   if (ibuf) {
-    const bTheme *btheme = ui::theme::theme_get();
-    const uchar *color = btheme->tui.wcol_menu_back.text_sel;
-
-    /* The top margin. */
+    const int logo_width = int(dialog_width * 0.62f);
+    const int source_width = ibuf->x > 0 ? ibuf->x : 1;
+    const int logo_height = (logo_width * ibuf->y) / source_width;
+    ibuf->color_mode = ImColorMode::RGBA;
+    if (logo_width != ibuf->x || logo_height != ibuf->y) {
+      IMB_scale(ibuf, logo_width, logo_height, IMBScaleFilter::Box, false);
+    }
+    IMB_premultiply_alpha(ibuf);
     layout.row(false).separator(0.2f);
-
-    /* The logo image. */
     layout.row(false).alignment_set(ui::LayoutAlign::Left);
-    uiDefButImage(block, ibuf, 0, U.widget_unit, ibuf->x, ibuf->y, show_color ? nullptr : color);
-
-    /* Padding below the logo. */
-    layout.row(false).separator(2.7f);
+    uiDefButImage(block, ibuf, 0, U.widget_unit, ibuf->x, ibuf->y, nullptr);
+    layout.row(false).separator(1.2f);
   }
 #endif /* !WITH_HEADLESS */
 
   ui::Layout &col = layout.column(true);
 
-  uiItemL_ex(&col, IFACE_("Blender"), ICON_NONE, true, false);
+  uiItemL_ex(&col, IFACE_("µ3D"), ICON_NONE, true, false);
 
   MenuType *mt = WM_menutype_find("WM_MT_splash_about", true);
   if (mt) {
@@ -501,9 +507,9 @@ static wmOperatorStatus wm_splash_about_invoke(bContext *C,
 
 void WM_OT_splash_about(wmOperatorType *ot)
 {
-  ot->name = "About Blender";
+  ot->name = "About µ3D";
   ot->idname = "WM_OT_splash_about";
-  ot->description = "Open a window with information about Blender";
+  ot->description = "Open a window with information about µ3D";
 
   ot->invoke = wm_splash_about_invoke;
   ot->poll = WM_operator_winactive;

@@ -1,3 +1,4 @@
+#pragma code_page(65001)
 #define BLENDERFILE 1
 #define IDR_VERSION1 1
 
@@ -25,10 +26,10 @@ BEGIN
       VALUE "FileVersion", BLEN_VER_RC_STR
       VALUE "ProductVersion", BLEN_VER_RC_STR
       VALUE "CompanyName", "Blender Foundation"
-      VALUE "FileDescription", "Blender"
+      VALUE "FileDescription", "µ3D"
       VALUE "LegalCopyright", "GPLv3 (Blender Foundation)"
-      VALUE "OriginalFilename", "blender.exe"
-      VALUE "ProductName", "Blender"
+      VALUE "OriginalFilename", "micro3D.exe"
+      VALUE "ProductName", "micro3D"
     END
   END
   BLOCK "VarFileInfo"
